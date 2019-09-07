@@ -456,7 +456,10 @@ bool gotovo = false;//zastavica za kraj igre
 
 while (1){//glavna petlja
     if(gb.update()){
-       
+
+      if(kraj(polje) && !gotovo){
+      gotovo = true;
+      }
       //kontrole
       //pomicanje selektora
       if(gb.buttons.pressed(BTN_UP)){
@@ -512,7 +515,7 @@ while (1){//glavna petlja
         flash = !flash;
       }
   
-      if(!player_potez){
+      if(!player_potez && !gotovo){
         if(prazno){//ako je ploča prazna AI igra u kut, inače sljedi algoritam napisan u funkciji AI_potez()
           polje[kutevi[random(0,4)]] = 2;
           prazno = false;
@@ -529,17 +532,13 @@ while (1){//glavna petlja
         player_potez = !player_potez;
         }
         
-      else{
+      if(player_potez && !gotovo){
         gb.display.cursorX = 52;
         gb.display.cursorY = 10;
         gb.display.println(F("Tvoj"));
         gb.display.cursorX = 52;
         gb.display.println(F("potez"));
         gb.display.drawBitmap(54,24,znak_O);
-      }
-        
-     if(kraj(polje) && !gotovo){
-      gotovo = true;     
       }
     }
   }
