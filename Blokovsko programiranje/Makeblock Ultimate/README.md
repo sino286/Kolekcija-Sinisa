@@ -1,0 +1,1 @@
+Aktivnost kreirana za radionicu na PMF MO u sklopu nastave MNI 2. Demonstrira izazove kod programiranja robota Ultimate. (Npr. Kretanjem prema naprijed jednu sekundu Ultimate ne prijeđe uvjijek istu udaljenost, ovisi o jačini baterije, vrsti podloge, količni prašine na podlozi i kotačima robota, itd.)
